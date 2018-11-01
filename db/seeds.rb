@@ -17,3 +17,9 @@ ingredients_hash['drinks'].each do |key|
   ingredient.name = key['strIngredient1']
   ingredient.save
 end
+
+10.times do
+  cocktail = Cocktail.new
+  cocktail.name = Faker::HarryPotter.character
+  cocktail.save
+end
