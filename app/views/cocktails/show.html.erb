@@ -1,5 +1,21 @@
-<div class="wrapper">
-  <div class="container">
-    <%= @cocktail.name %>
+<div class="message">
+  <h2><%= @cocktail.name %></h2>
+  <div class="cocktail-ingredients">
+    <% @cocktail.doses.each do |dose|%>
+      <div class="message-body">
+        <h3><strong><%= dose.ingredient.name %></strong></h3>
+      <p>
+        <%= dose.description %>
+      </p>
+      <%= link_to "Delete", dose_path(dose),
+        method: :delete,
+        data: { confirm: "Are you sure?"} %>
+    </div>
+   <% end %>
+  </div>
+  <div class="add-dose-button">
+    <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-danger"%>
   </div>
 </div>
+
+
