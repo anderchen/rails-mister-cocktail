@@ -1,7 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path %>);">
-  <div class="banner-content">
-    <h1>My Cocktails</h1>
-    <p>Let's pair you with one</p>
-    <a class="btn btn-primary btn-lg"><%= button_text %></a>
-  </div>
+<div class="banner" id="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path %>);">
+
+  <% if description_banner == true %>
+    <div class="banner-content">
+      <h1>My Cocktails</h1>
+      <p>Let's pair you with one</p>
+      <a class="btn btn-primary btn-lg"><%= button_text %></a>
+    </div>
+  <% elsif description_banner == "cocktail show" %>
+    <div class="banner-content">
+      <%= render "shared/grid", image_path: "https://images.unsplash.com/photo-1533418651874-33b2cdcd0c5e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=22f3007584fe2dc5e9d8cd73c42e46ee&auto=format&fit=crop&w=334&q=80", cocktail_name: @cocktail.name, cocktail_doses: @cocktail.doses, link_to_path: new_cocktail_dose_path(@cocktail) %>
+    </div>
+    <% elsif description_banner == "cocktail new" %>
+      <div class="banner-content">
+        <%= render "shared/form", model1: @cocktail, page_used: "cocktail new" %>
+      </div>
+    <% elsif description_banner == "dose new" %>
+      <div class="banner-content">
+        <%= render "shared/form", model1: @cocktail, model2: @dose, page_used: "dose new" %>
+      </div>
+  <% end %>
 </div>

@@ -48,3 +48,14 @@
   opacity: 0.1;
 }
 
+#cocktail-image-card {
+  background-image: url("https://images.unsplash.com/photo-1536935558068-364dcd7a75b0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7411da4ce1ad24447ec9c9597456d9d7&auto=format&fit=crop&w=334&q=80");
+  background-size: cover;
+  height: 500px;
+}
+
+#cocktail-title-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

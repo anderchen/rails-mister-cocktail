@@ -1,0 +1,15 @@
+<% if page_used == "cocktail new" %>
+  <div class="container">
+    <%= simple_form_for (model1) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Create a new cocktail", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+<% elsif page_used == "dose new" %>
+  <div class="container">
+    <%= simple_form_for [model1, model2] do |f| %>
+      <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
+      <%= f.input :description %>
+      <%= f.submit "Add ingredient", class: "btn btn-danger" %>
+    <% end %>
+<% end %>
