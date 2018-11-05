@@ -42,6 +42,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 
+# Carrierwave
+gem 'carrierwave', '~> 1.2'
+
 # Front-End Gems
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
