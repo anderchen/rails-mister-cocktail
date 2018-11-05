@@ -40,6 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #Cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
 
 # Front-End Gems
 gem 'autoprefixer-rails'
