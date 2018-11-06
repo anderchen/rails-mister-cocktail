@@ -18,4 +18,3 @@ ingredients_hash['drinks'].each do |key|
   ingredient.save
 end
 
-
